@@ -4,7 +4,6 @@ import { PostService } from '../services/post.service';
 import { UserModel } from '../models/user.model';
 import { UsersService } from '../services/users.service';
 import { CommentModel } from '../models/comment.model';
-import { CommentsService } from '../services/comments.service';
 
 
 @Component({
@@ -54,7 +53,4 @@ export class PostsComponent implements OnInit {
       }
     }
   }
-    postClick(id: number){
-      console.log(id);
-    }
 }
