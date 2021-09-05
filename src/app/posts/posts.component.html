@@ -3,7 +3,7 @@
         <div class="col">
           <input class="form-control m-2" placeholder="Search" [(ngModel)]="searchText" type="search">
             <div class="card p-2 m-4" *ngFor="let post of posts | filter: searchText">
-              <a class="stretched-link" routerLink></a>
+              <a class="stretched-link" (click)="postClick(post.id)" routerLink="/posts/{{ post.id }}"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
                     <h6 class="card-subtitle">{{ post.uName }}</h6>

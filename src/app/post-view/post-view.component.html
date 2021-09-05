@@ -1,1 +1,27 @@
-<p>post-view works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <div class="card m-4">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ post.title }}
+            </h5>
+            <p class="card-text">
+              {{ post.body }}
+            </p>
+          </div>
+        </div>
+        <div class="card m-5" *ngFor="let comment of comments">
+          <div class="card-header">
+            {{ comment.email }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+                {{comment.name}}
+            </h5>
+              <p class="card-text">{{ comment.body }}</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
