@@ -8,12 +8,14 @@ import { PostsComponent } from './posts/posts.component';
 import { PostService } from './services/post.service';
 import { FilterPipe } from './services/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { PostViewComponent } from './post-view/post-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    FilterPipe
+    FilterPipe,
+    PostViewComponent
   ],
   imports: [
     BrowserModule,

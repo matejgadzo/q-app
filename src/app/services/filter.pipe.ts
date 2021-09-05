@@ -9,7 +9,10 @@ export class FilterPipe implements PipeTransform {
     if (!searchText) {
       return items;
     }
-    return items.filter( (item: any) => item.title.toLowerCase().indexOf(searchText.toLowerCase())> -1 ||
-      item.body.toLowerCase().indexOf(searchText.toLowerCase()) > -1)
+    return items.filter( (item: any) => item.uName.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+      //Uncomment for searching by body or title or all at once
+      //item.title.toLowerCase().indexOf(searchText.toLowerCase())> -1 ||
+      //item.body.toLowerCase().indexOf(searchText.toLowerCase()) > -1 ||
+      )
   }
 }

@@ -1,11 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col">
-          <input [(ngModel)]="searchText" type="search">
-          <!-- <button type="submit" onclick="this.filter(input)">Search</button> -->
+          <input class="form-control m-2" placeholder="Search" [(ngModel)]="searchText" type="search">
             <div class="card p-2 m-4" *ngFor="let post of posts | filter: searchText">
+              <a class="stretched-link" routerLink></a>
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
+                    <h6 class="card-subtitle">{{ post.uName }}</h6>
                     <p class="card-text"> {{ post.body }} </p>
                 </div>
             </div>

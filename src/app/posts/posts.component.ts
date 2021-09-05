@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PostModel } from '../models/post.model';
 import { PostService } from '../services/post.service';
 import { FilterPipe } from '../services/filter.pipe';
+import { UserModel } from '../models/user.model';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-posts',
@@ -10,22 +12,38 @@ import { FilterPipe } from '../services/filter.pipe';
 })
 export class PostsComponent implements OnInit {
   posts: PostModel[] = [];
+  users: UserModel[] = [];
   filterPosts: PostModel[] = [];
   searchText: string = '';
 
   constructor(
-    private postService: PostService
+    private postService: PostService,
+    private userService: UsersService
     ) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+//get all posts and users + match users with posts
+
+  getData(){
     this.postService.getAllPosts().subscribe((data: PostModel[]) => {
-      this.posts = data;
-      console.log(this.posts)
+      this.posts = data; this.attributeUser();
+    });
+    this.userService.getAllUsers().subscribe((data: UserModel[])=>{
+      this.users = data; this.attributeUser();
     });
   }
 
-  public filter(){
-    this.filterPosts = this.posts.filter(item => (item.body || item.title));
-    console.log(this.filterPosts);
+//match userId with userName
+  attributeUser(){
+    for(const post of this.posts){
+      for(const user of this.users){
+        if (post.userId === user.id) {
+            post.uName = user.name;
+        }
+      }
+    }
   }
+
 }
