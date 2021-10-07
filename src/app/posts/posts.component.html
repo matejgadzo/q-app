@@ -5,9 +5,9 @@
             <div class="card p-2 m-4" *ngFor="let post of posts | filter: searchText">
               <a class="stretched-link" routerLink="/posts/{{ post.id }}"></a>
                 <div class="card-body">
-                    <h5 class="card-title">{{ post.title }}</h5>
-                    <h6 class="card-subtitle">{{ post.uName }}</h6>
-                    <p class="card-text"> {{ post.body }} </p>
+                    <h5 class="card-title">{{ post?.title || 'Title' }}</h5>
+                    <h6 class="card-subtitle">{{ post?.uName || 'UserName' }}</h6>
+                    <p class="card-text"> {{ post?.body || 'Post Body' }} </p>
                 </div>
             </div>
         </div>

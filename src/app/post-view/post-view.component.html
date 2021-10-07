@@ -4,22 +4,22 @@
         <div class="card m-4">
           <div class="card-body">
             <h5 class="card-title">
-              {{ post.title }}
+              {{ post?.title || 'Post Title' }}
             </h5>
             <p class="card-text">
-              {{ post.body }}
+              {{ post?.body || 'Post Body' }}
             </p>
           </div>
         </div>
         <div class="card m-5" *ngFor="let comment of comments">
           <div class="card-header">
-            {{ comment.email }}
+            {{ comment?.email || 'example@mail.com' }}
           </div>
           <div class="card-body">
             <h5 class="card-title">
-                {{comment.name}}
+                {{comment?.name || 'Comment Title'}}
             </h5>
-              <p class="card-text">{{ comment.body }}</p>
+              <p class="card-text">{{ comment?.body || 'Comment Body' }}</p>
           </div>
         </div>
     </div>
