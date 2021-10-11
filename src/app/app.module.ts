@@ -26,9 +26,7 @@ import { postReducer } from "./reducers/posts.reducer"
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({
-      post: postReducer
-    })
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     PostService
