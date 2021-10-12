@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PostViewComponent } from './post-view/post-view.component';
-import { PostsComponent } from './posts/posts.component';
+import { PostViewComponent } from './posting/post-view/post-view.component';
+import { PostsComponent } from './posting/posts/posts.component';
 
 const routes: Routes = [
   {

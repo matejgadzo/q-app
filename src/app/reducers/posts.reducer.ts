@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { PostModel } from "../../app/models/post.model";
+import { PostModel } from "../posting/models/post.model";
 import * as PostActions from "../actions/posts.action";
 
 const initState: PostModel = {

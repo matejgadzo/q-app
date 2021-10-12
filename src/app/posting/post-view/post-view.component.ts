@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CommentModel } from '../models/comment.model';
 import { PostModel } from '../models/post.model';
-import { CommentsService } from '../services/comments.service';
-import { PostService } from '../services/post.service';
+import { CommentsService } from '../../services/comments.service';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-post-view',

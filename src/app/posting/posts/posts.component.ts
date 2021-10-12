@@ -1,9 +1,10 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { PostModel } from '../models/post.model';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
 import { UserModel } from '../models/user.model';
-import { UsersService } from '../services/users.service';
+import { UsersService } from '../../services/users.service';
 import { CommentModel } from '../models/comment.model';
+import { FormsModule } from "@angular/forms";
 
 
 @Component({

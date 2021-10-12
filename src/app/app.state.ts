@@ -1,6 +1,6 @@
-import { PostModel } from "../app/models/post.model";
-import { CommentModel } from "./models/comment.model";
-import { UserModel } from "./models/user.model";
+import { PostModel } from "./posting/models/post.model";
+import { CommentModel } from "./posting/models/comment.model";
+import { UserModel } from "./posting/models/user.model";
 
 export interface AppState{
   readonly posts: PostModel;

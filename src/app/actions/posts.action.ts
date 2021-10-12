@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Action } from '@ngrx/store'
-import { PostModel } from '../models/post.model'
+import { PostModel } from '../posting/models/post.model'
 
 export const ADD_POSTS = '[POSTS] Add';
 export const REMOVE_POST = '[POSTS] Remove';
