@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { PostService } from '../services/post.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 
 
@@ -14,19 +15,21 @@ import { RouterModule } from '@angular/router';
   declarations: [
     PostsComponent,
     PostViewComponent,
-    FilterPipe
+    FilterPipe,
+    AppComponent
   ],
   imports: [
     CommonModule,
     FilterPipe,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [
     PostService
   ],
   exports:[
-    FilterPipe
+
   ]
 })
 export class PostingModule { }

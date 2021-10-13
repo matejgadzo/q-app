@@ -10,6 +10,7 @@ import { FilterPipe } from './services/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { StoreModule } from "@ngrx/store";
+import { PostViewComponent } from './posting/post-view/post-view.component';
 
 
 @NgModule({
