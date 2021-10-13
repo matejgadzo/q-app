@@ -11,7 +11,7 @@ const initState: PostModel = {
   uName: "Default User"
 };
 
-export function postReducer(state: PostModel = initState, action: PostActions.Actions){
+export function postReducer(state = [initState], action: PostActions.Actions){
   switch(action.type){
     case PostActions.ADD_POSTS:
       return [state, action.payload];

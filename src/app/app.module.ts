@@ -27,7 +27,7 @@ import { postReducer } from "./reducers/posts.reducer"
     HttpClientModule,
     FormsModule,
     StoreModule.forRoot({
-      //Types of parameters 'state' and 'state' are incompatible. ---->> post: postReducer
+      post: postReducer
     })
   ],
   providers: [
