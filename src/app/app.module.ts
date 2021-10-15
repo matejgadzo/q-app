@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PostViewComponent } from './post-view/post-view.component';
 import { HeaderComponent } from './header/header.component';
 import { StoreModule } from "@ngrx/store";
-import { postReducer } from "./reducers/posts.reducer"
+
 
 @NgModule({
   declarations: [
@@ -25,10 +25,7 @@ import { postReducer } from "./reducers/posts.reducer"
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    StoreModule.forRoot({
-      post: postReducer
-    })
+    FormsModule
   ],
   providers: [
     PostService
