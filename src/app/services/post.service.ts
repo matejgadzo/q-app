@@ -12,7 +12,7 @@ export class PostService {
         private http: HttpClient
     ) {}
 
-    getAllPosts(): Observable<PostModel[]> {
+    getAllPosts(){
         return this.http.get<PostModel[]>(this.url + "/posts");
     }
 

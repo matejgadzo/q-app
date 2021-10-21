@@ -10,6 +10,8 @@ import { FilterPipe } from './services/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { PostViewComponent } from './post-view/post-view.component';
 import { HeaderComponent } from './header/header.component';
+import { NgxsModule } from '@ngxs/store';
+import { PostState } from './state/post.state';
 
 
 @NgModule({
@@ -25,6 +27,9 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgxsModule.forRoot([
+      PostState
+    ])
 
   ],
   providers: [
