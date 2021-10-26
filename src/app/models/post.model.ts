@@ -6,5 +6,6 @@ export interface PostModel{
     body: string;
     userId: number;
     uName: string;
+    name: string;
     comments: CommentModel[];
 }

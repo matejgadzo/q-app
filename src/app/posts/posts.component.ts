@@ -1,31 +1,21 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { PostModel } from '../models/post.model';
 import { PostService } from '../services/post.service';
 import { UserModel } from '../models/user.model';
 import { UsersService } from '../services/users.service';
-import { CommentModel } from '../models/comment.model';
-import { PostState } from '../state/post.state';
-import {Select, Store} from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { getAllPosts } from '../actions/posts.action';
+import { Store } from '../state/post.store';
+
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css'],
 })
-export class PostsComponent implements OnInit {
-  // @Output()
-  // post!: PostModel;
+export class PostsComponent implements OnInit  {
 
-  @Select(PostState.getPosts)
-  posts!: Observable<PostModel[]>;
+  posts: PostModel[] = [];
+  users: UserModel[] = [];
 
-
-  // posts: PostModel[] = [];
-  // users: UserModel[] = [];
-  // comments: CommentModel[] = [];
-  // filterPosts: PostModel[] = [];
   searchText: string = '';
 
   constructor(
@@ -36,30 +26,35 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     //this.getData();
-    this.store.dispatch(new getAllPosts());
+    if(this.store.getAllPosts().length === 0){
+      this.postService.getAllPosts().subscribe(res =>{
+        localStorage.setItem('posts', JSON.stringify(res));
+        this.posts = res;
+      })
+      if(this.store.getAllUsers().length ===0){
+        this.userService.getAllUsers().subscribe(use =>{
+          localStorage.setItem('users', JSON.stringify(use));
+          this.users = use;
+        })
+      }
+      this.attributeUser();
+    }else {
+      this.posts = this.store.getAllPosts();
+      this.users = this.store.getAllUsers();
+      this.attributeUser();
+    }
   }
-  //get all posts and users + match users with posts
-
-  // getData() {
-  //   this.postService.getAllPosts().subscribe((data: PostModel[]) => {
-  //     this.posts = data;
-  //     this.attributeUser();
-
-  //   });
-  //   this.userService.getAllUsers().subscribe((data: UserModel[]) => {
-  //     this.users = data;
-  //     this.attributeUser();
-  //   });
-  // }
 
   //match userId with userName
-  // attributeUser() {
-  //   for (const post of this.posts) {
-  //     for (const user of this.users) {
-  //       if (post.userId === user.id) {
-  //         post.uName = user.name;
-  //       }
-  //     }
-  //   }
-  // }
+  attributeUser() {
+      for(let post of this.posts){
+        for(let user of this.users){
+          if(post.id === user.id){
+            post.uName = user.username;
+            post.name = user.name;
+          }
+        }
+      }
+      console.log(this.posts);
+    }
 }

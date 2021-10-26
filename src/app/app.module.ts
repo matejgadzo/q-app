@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PostViewComponent } from './post-view/post-view.component';
 import { HeaderComponent } from './header/header.component';
 import { NgxsModule } from '@ngxs/store';
-import { PostState } from './state/post.state';
+import {  Store } from './state/post.store';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { PostState } from './state/post.state';
     HttpClientModule,
     FormsModule,
     NgxsModule.forRoot([
-      PostState
+      Store
     ])
 
   ],
