@@ -6,8 +6,7 @@
               <a class="stretched-link" routerLink="/posts/{{ post.id }}"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{ post?.title || 'Title' }}</h5>
-                    <h6 class="card-subtitle">{{ post?.uName || 'User Name' }}</h6>
-                    <h6 class="card-subtitle">aka {{ post?.name || 'Full Name'}}</h6>
+                    <h6 class="card-subtitle">{{ post?.uName || 'User Name' }} aka {{ post?.name || 'Full Name'}}</h6>
                     <p class="card-text"> {{ post?.body || 'Post Body' }} </p>
                 </div>
             </div>
