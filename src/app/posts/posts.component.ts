@@ -48,7 +48,7 @@ export class PostsComponent implements OnInit  {
   attributeUser() {
       for(let post of this.posts){
         for(let user of this.users){
-          if(post.id === user.id){
+          if(post.userId === user.id){
             post.uName = user.username;
             post.name = user.name;
           }

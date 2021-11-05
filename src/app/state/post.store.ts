@@ -1,4 +1,3 @@
-import { PostModel } from '../models/post.model'
 import { Injectable } from '@angular/core';
 import { State } from '@ngxs/store';
 
