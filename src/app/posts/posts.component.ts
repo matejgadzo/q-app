@@ -25,7 +25,6 @@ export class PostsComponent implements OnInit  {
   ) {}
 
   ngOnInit(): void {
-    //this.getData();
     if(this.store.getAllPosts().length === 0){
       this.postService.getAllPosts().subscribe(res =>{
         localStorage.setItem('posts', JSON.stringify(res));
@@ -55,6 +54,5 @@ export class PostsComponent implements OnInit  {
           }
         }
       }
-      console.log(this.posts);
     }
 }
